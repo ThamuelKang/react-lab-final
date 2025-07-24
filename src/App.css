@@ -1,0 +1,75 @@
+/* Navigation */
+
+nav {
+    width: 100%;
+    padding: 12px;
+    background-color: aliceblue;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Form */
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 40px 0;
+    padding: 24px;
+    background-color: rgb(231, 231, 231);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    gap: 12px;
+}
+
+
+form h2 {
+    margin: 0;
+}
+
+input,
+textarea {
+    background-color: rgba(255, 255, 255, 0.80);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+
+
+
+/* Projects */
+
+.project-container {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+}
+
+.project-list {
+    width: 400px;
+    padding: 24px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin: 12px 0;
+}
+
+img {
+    width: 160px;
+    border-radius: 12px;
+}
+
+
+.content h3 {
+    margin: 0 0 4px 0;
+}
+
+.content p {
+    margin: 0;
+}
