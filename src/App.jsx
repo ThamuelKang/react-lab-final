@@ -20,15 +20,17 @@ function App() {
     return project.title.toLowerCase().includes(searchTerm.toLowerCase())
   })
 
-  const handleFormChange = (event) => {
-    event.preventDefault();
 
+
+  const handleFormChange = (event) => {
     const { name, value } = event.target;
 
     createProject((prev) => ({
       ...prev,
       [name]: value
     }));
+
+
   }
 
   const addProject = (event) => {
@@ -37,8 +39,11 @@ function App() {
     updateProjectData((prev) => {
       return [...prev, newProject]
     })
-
-    console.log(projects)
+    createProject({
+      title: "",
+      description: "",
+      image: "https://samuelkang.info/assets/illustrations/small/pearl.png"
+    });
   }
 
 
@@ -47,9 +52,13 @@ function App() {
       <Nav />
       <main className="main">
 
-        <form onSubmit={addProject}>
+        <form id="add-project" onSubmit={addProject}>
           <h2>Create Project</h2>
+
+          <label htmlFor="title">Title</label>
           <input
+            required
+            id="title"
             type="text"
             name="title"
             value={newProject.title}
@@ -57,13 +66,16 @@ function App() {
             placeholder="Project name"
           />
 
+          <label htmlFor="description">Description</label>
           <textarea
+            required
+            id="description"
             name="description"
             value={newProject.description}
             onChange={handleFormChange}
             placeholder="Start writing a description..."
           />
-          <button type="submit">Add</button>
+          <button aria-label="Add project" type="submit">Add</button>
 
         </form>
 
@@ -77,7 +89,11 @@ function App() {
               onChange={(event) => setSearch(event.target.value)}
             />
           </div>
-          <ProjectList data={filteredProjects} />
+          {filteredProjects.length === 0 ? (
+            <p className="empty-state">No projects found.</p>
+          ) : (
+            <ProjectList data={filteredProjects} />
+          )}
         </section>
       </main>
     </>
