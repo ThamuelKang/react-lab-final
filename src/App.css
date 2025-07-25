@@ -36,6 +36,7 @@ textarea {
     padding: 12px;
     font-family: 'Roboto', sans-serif;
     width: 100%;
+    font-size: 1em;
 }
 
 button {
